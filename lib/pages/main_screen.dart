@@ -1,3 +1,4 @@
+import 'package:cryptoWallet/pages/verify_menonics.dart';
 import 'package:cryptoWallet/provider/wallet_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -33,6 +34,8 @@ class _MainScreenState extends State<MainScreen> {
                               Text("${index + 1} ${mnemonicsList[index]}")),
                       InkWell(
                           onTap: () {
+
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>VerifyMenonics(data: mnemonicsWords,)));
                             Clipboard.setData(
                                 ClipboardData(text: mnemonicsWords));
                             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
